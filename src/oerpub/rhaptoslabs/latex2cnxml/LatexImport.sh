@@ -97,8 +97,7 @@ EOF
 tralicsoutfile=${document}.xml
 # tralics better be in your path!!!
 # /usr/bin/tralics
-# Marvin: Use local path for tralics
-~/Dev/oerpub.rhaptoslabs.tralics/src/tralics -noentnames -math_variant -oe8 "${texfile}" # -noundefmac??? or -noxmlerror???
+tralics -noentnames -math_variant -oe8 "${texfile}" # -noundefmac??? or -noxmlerror???
 if [[ ! -s "${tralicsoutfile}" ]]; then
    echo "tralics failed to create its output xml file."
    exit 255
