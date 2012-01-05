@@ -4,7 +4,7 @@ LaTeX to CNXML transformation
 
 Installation
 ============
-Some system libraries are needed (about 2GB of space needed!)::
+Some system libraries are needed (about 2GB!)::
 
     sudo apt-get install xsltproc texlive-full imagemagick python-imaging
 
