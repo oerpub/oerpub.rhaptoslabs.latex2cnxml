@@ -14,8 +14,7 @@ from lxml import etree
 from zipfile import ZipFile, ZIP_DEFLATED, is_zipfile
 #import magic
 
-#current_dir = os.path.dirname(__file__) # This does not give the absolute file path
-current_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = os.path.dirname(os.path.abspath(__file__)) # We need absolute file paths for the shell script later
 XSL_LOCATION = os.path.join(current_dir, 'www')
 CNXML_AUTOID_XSL = os.path.join(current_dir, 'www', 'generateIds.xsl')
 
