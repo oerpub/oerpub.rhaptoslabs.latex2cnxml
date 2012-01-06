@@ -12,12 +12,10 @@ import re
 from PIL import Image
 from lxml import etree
 from zipfile import ZipFile, ZIP_DEFLATED, is_zipfile
-#import magic
 
 current_dir = os.path.dirname(os.path.abspath(__file__)) # We need absolute file paths for the shell script later
 XSL_LOCATION = os.path.join(current_dir, 'www')
 CNXML_AUTOID_XSL = os.path.join(current_dir, 'www', 'generateIds.xsl')
-
 
 # ============================================
 
@@ -34,9 +32,17 @@ def writeToGood(binData,strOriginalFileName):
 
     return strFileName
 
-# TODO
+# This does nothing. It was originally used for harvesting and analysing files.
 def moveToBad(strFileName):
     pass
+#    bHarvestingOn = ( len(self.config['harvest_dir_failure']) > 0 )
+#    if bHarvestingOn:
+#        strBadHarvestDirectory = self.config['harvest_dir_failure']
+#        zLOG.LOG("LaTeX2CNXML Transform", zLOG.INFO, "Moving: %s" % strFileName)
+#        zLOG.LOG("LaTeX2CNXML Transform", zLOG.INFO, "to: %s" % strBadHarvestDirectory)
+#        strNewFileName = moveImportFile(strFileName,strBadHarvestDirectory)
+#        if len(strNewFileName) == 0:
+#            zLOG.LOG("LaTeX2CNXML Transform", zLOG.INFO, "Failed to move BAD imported LaTeX doc: %s" % strFileName)
 
 def cleanup(strFileName):
     bSaveToTemp = True
@@ -44,8 +50,6 @@ def cleanup(strFileName):
         print ("LaTeX2CNXML: Removing: %s" % strFileName)
         os.remove(strFileName)
 
-
-# === TODO!!! ===
 def convert(data, original_filename):
     """Input is a zip file."""
 
@@ -200,10 +204,10 @@ def convert(data, original_filename):
     objects[strFile] = binData
     objFile.close
 
-    #TODO:    
+    #old:   
     #outdata.setData(strCnxml)
 
-    #TODO:
+    #old:
     #outdata.setSubObjects(objects)
 
     # cleanup the temp working directory
@@ -216,15 +220,9 @@ def convert(data, original_filename):
 
 # ============================================
 
-def latex_transform(content, original_filename):
-    objects = {}
-    #print "Transformiere ne..."
-    cnxml, objects = convert(content, original_filename)
-    return cnxml, objects
-
 def latex_to_cnxml(content, original_filename):
     objects = {}
-    cnxml, objects = latex_transform(content, original_filename)
+    cnxml, objects = convert(content, original_filename)
     return cnxml, objects
 
 if __name__ == "__main__":

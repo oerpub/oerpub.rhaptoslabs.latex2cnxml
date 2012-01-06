@@ -1,0 +1,13 @@
+TODO, what is not used
+======================
+Currently all XML validation is not used:
+
+jing.jar
+catalog/
+rng/
+
+This directory has only templates for development purpose. It needs to be deleted sometime in the future.
+
+to_be_deleted/
+
+
