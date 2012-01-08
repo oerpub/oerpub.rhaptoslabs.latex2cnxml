@@ -35,7 +35,7 @@ setup(name='oerpub.rhaptoslabs.latex2cnxml',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'PIL',
+          'Pillow',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
