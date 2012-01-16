@@ -10,4 +10,4 @@ Some system libraries are needed (about 2GB!)::
 
 Tralics is also needed, follow this link:
 
-https://github.com/therealmarv/oerpub.rhaptoslabs.tralics
+https://github.com/oerpub/oerpub.rhaptoslabs.tralics
