@@ -1,8 +1,13 @@
 Changelog
 =========
 
-1.0dev (unreleased)
--------------------
+1.01
+----
+- removed unnecessary egg folders and files
+  [therealmarv]
 
-- Package created using zopeskel
-  []
+1.0
+---
+
+- initial release
+  [therealmarv]
